@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="EUC-KR">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기사 입력</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+       
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        textarea, input[type="text"] {
+            width: calc(100% - 20px); /* 버튼을 고려한 너비 조정 */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            float: right; /* 오른쪽으로 부동 */
+        }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+    <form id="articleForm">
+        <h1>기사 입력하기</h1>
+        <label for="articleType">기사 입력 방법 선택:</label><br>
+        <input type="radio" id="urlInput" name="articleType" value="url">
+        <label for="urlInput">기사 URL 입력</label>
+        <input type="radio" id="textInput" name="articleType" value="text">
+        <label for="textInput">기사 내용 직접 입력</label><br><br>
+        <div id="urlInputGroup" style="display:none;">
+            <label for="articleURL">기사 URL:</label><br>
+            <input type="text" id="articleURL" name="articleURL"><br><br>
+        </div>
+        <div id="textInputGroup" style="display:none;">
+            <label for="articleContent">기사 내용:</label><br>
+            <textarea id="articleContent" name="articleContent" rows="4" cols="50"></textarea><br><br>
+        </div>
+        <label for="articleInput">입력할 내용:</label><br>
+        <textarea id="articleInput" name="articleInput" rows="4" cols="50"></textarea><br><br>
+        <button type="submit">요약하기</button> <!-- 제출 버튼 이름 변경 -->
+        <br><br> <!-- 추가된 줄바꿈 -->
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
